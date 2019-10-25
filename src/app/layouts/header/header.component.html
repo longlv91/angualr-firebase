@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      Admin Panel
+    </div>
+  </div>
+
+  <div class="container">
+    <div [matMenuTriggerFor]="menu" class="user">
+      <div class="user-avatar">
+        <img src="assets/img/default-avatar.jpg" />
+      </div>
+
+      <div class="user-name">
+        {{ userEmail }}
+      </div>
+    </div>
+
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item routerLink="/">Profile</a>
+      <mat-divider></mat-divider>
+      <a mat-menu-item (click)="logout()">Log out</a>
+    </mat-menu>
+  </div>
+</header>

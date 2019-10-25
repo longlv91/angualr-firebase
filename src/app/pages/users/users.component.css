@@ -1,0 +1,78 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-new {
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+}
+
+.avatar {
+  margin: 10px 0;
+  padding: 10px;
+  max-width: 100px;
+  max-height: 100px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar label {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+}
+
+.avatar label:after {
+  content: '';
+  height: 200%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  transition: top 0.13s ease-out;
+  background: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.avatar:hover label:after {
+  top: -100%;
+}
+
+.avatar label .mat-icon {
+  color: #ffffff;
+  opacity: 0;
+  position: relative;
+  top: -5px;
+  z-index: 1;
+  transition: opacity 0.13s ease-out;
+}
+
+.avatar:hover label .mat-icon {
+  opacity: 0.8;
+}
+
+.btn-edit,
+.btn-delete {
+  opacity: 0.5;
+}
+
+.btn-edit:hover {
+  opacity: 1;
+  color: #3366ff;
+}
+
+.btn-delete:hover {
+  opacity: 1;
+  color: #ff3d71;
+}

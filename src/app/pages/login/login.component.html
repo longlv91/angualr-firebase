@@ -1,0 +1,30 @@
+<h1>Login to Admin Panel</h1>
+
+<mat-card class="container">
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Email"
+      [formControl]="email"
+      autocomplete="off"
+    />
+    <mat-error *ngIf="email.invalid">{{ getEmailErrorMessage() }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Password"
+      type="password"
+      [formControl]="password"
+      (keyup.enter)="login()"
+    />
+    <mat-error *ngIf="password.invalid">{{
+      getPasswordErrorMessage()
+    }}</mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button class="btn-login" color="primary" (click)="login()">
+    <span> Login</span>
+  </button>
+</mat-card>

@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 0.75rem;
+}
+
+.mat-card {
+  padding: 0;
+}
+
+.box {
+  height: 6rem;
+}
+
+.box-icon {
+  float: left;
+  height: 6rem;
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  line-height: 6rem;
+}
+
+.box-icon .material-icons {
+  font-size: 3rem;
+  width: auto;
+  height: auto;
+  color: #ffffff;
+}
+
+.box-content {
+  padding: 10px;
+  margin-left: 6rem;
+  line-height: 1.5;
+}
+
+.box-text {
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+}
+
+.box-number {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.bg-primary {
+  background-color: #3f51b5;
+}
+
+.bg-accent {
+  background-color: #ff4081;
+}
+
+.bg-warn {
+  background-color: #f44336;
+}
