@@ -1,0 +1,19 @@
+::ng-deep div.ant-row {
+    margin-bottom: 20px;
+}
+
+.title-section {
+    font-size: 1vw;
+    font-weight: 300;
+}
+
+#chart0,
+#chart4 {
+    min-height: 300px;
+}
+
+#chart1,
+#chart2,
+#chart3 {
+    min-height: 200px;
+}

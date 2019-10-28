@@ -1,22 +1,67 @@
-.header {
+.logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+nz-layout {
+  height: 100%;
+}
+
+nz-layout.main-container {
+  background: transparent;
+}
+
+nz-content {
+  margin: 0 16px;
+}
+
+nz-content.unauthorized-status {
+  margin: 0;
+}
+
+nz-breadcrumb {
+  margin: 16px 0;
+}
+
+.inner-content {
+  padding: 24px;
+  min-height: 650px;
+}
+
+nz-footer {
+  text-align: center;
+  background: transparent;
   position: fixed;
+  bottom: 0;
+  width: calc(100% - 300px);
+  padding: 20px 50px;
+}
+
+nz-footer.collapsed {
+  width: calc(100% - 80px);
+}
+
+nrwl-workspace-navigation {
+  position: relative;
+  display: block;
+  height: calc(100vh - 64px);
+}
+
+perfect-scrollbar {
+  height: calc(100vh - 64px);
+}
+
+::ng-deep perfect-scrollbar > .ps.ps--active-y > .ps__rail-y {
+  width: 0px !important;
+}
+
+.trigger {
+  position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1040;
-}
-
-.main {
-  margin-top: 4.75rem;
-  min-height: calc(100vh - 4.75rem);
-}
-
-.left-menu {
-  width: 16rem;
-  padding: 1.25rem 0;
-}
-
-.main-content {
-  padding: 2.25rem;
-  min-height: calc(100vh - 4.75rem - 61px);
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 2;
+  transition: left 0.35s;
 }

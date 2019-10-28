@@ -1,15 +1,31 @@
-<app-header class="header"></app-header>
-
-<mat-drawer-container class="main">
-  <mat-drawer mode="side" class="left-menu" opened>
-    <app-left-menu></app-left-menu>
-  </mat-drawer>
-
-  <mat-drawer-content>
-    <main class="main-content">
-      <router-outlet></router-outlet>
-    </main>
-
-    <app-footer class="footer"></app-footer>
-  </mat-drawer-content>
-</mat-drawer-container>
+<nz-layout [ngClass]="getCurrentTheme()">
+  <nz-sider *ngIf="isAuthorized()" nzCollapsible [(nzCollapsed)]="isCollapsed" [nzBreakpoint]="'lg'" [nzTrigger]="null"
+    nzWidth="300px">
+    <div class="logo"></div>
+    <perfect-scrollbar [config]="config">
+      <nrwl-workspace-navigation [isCollapsed]="isCollapsed"></nrwl-workspace-navigation>
+    </perfect-scrollbar>
+  </nz-sider>
+  <perfect-scrollbar [config]="config">
+    <nz-layout class="main-container">
+      <i *ngIf="isAuthorized()" class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+        (click)="isCollapsed = !isCollapsed"></i>
+      <nrwl-workspace-header [isCollapsed]="isCollapsed"></nrwl-workspace-header>
+      <nz-content [ngClass]="{ 'unauthorized-status': !isAuthorized() }">
+        <nz-breadcrumb *ngIf="isAuthorized()">
+          <nz-breadcrumb-item *ngFor="let item of breadcrumbs">{{
+            item
+          }}</nz-breadcrumb-item>
+        </nz-breadcrumb>
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+      <nz-footer *ngIf="isAuthorized()" [ngClass]="{ 'collapsed': isCollapsed }">VBL ©2019 Implement By Angular
+      </nz-footer>
+    </nz-layout>
+  </perfect-scrollbar>
+  <div *ngIf="isAuthorized()">
+    <nrwl-workspace-right-settings></nrwl-workspace-right-settings>
+  </div>
+</nz-layout>

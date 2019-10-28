@@ -1,0 +1,28 @@
+.settings {
+  position: fixed;
+  top: 40vh;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 35px;
+  border-radius: 5px 0 0 5px;
+  text-align: center;
+  cursor: pointer;
+  color: #6a6a6a;
+  background-color: #001529;
+  border: 1px solid #001529;
+  transition: right 0.35s ease-in-out;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+}

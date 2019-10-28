@@ -28,10 +28,12 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin },
     children: [
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'users', component: UsersComponent },
-      { path: 'users/:id', component: UserDetailComponent },
-      { path: '', component: ProfileComponent }
+      { path: 'apps', loadChildren: () => import('./modules/application/application.module').then(mod => mod.ApplicationModule) },
+      { path: 'pages', loadChildren: () => import('./modules/page/page.module').then(mod => mod.PageModule) },
+      { path: 'user-interface', loadChildren: () => import('./modules/user-interface/user-interface.module')
+      .then(mod => mod.UserInterfaceModule) },
+      { path: 'ant-elements', loadChildren: () => import('./modules/ant-elements/ant-elements.module').then(mod => mod.AntElementsModule)},
+      { path: 'docs', loadChildren: () => import('./modules/documentation/documentation.module').then(mod => mod.DocumentationModule)}
     ]
   },
   {
